@@ -28,7 +28,7 @@ const AuthProvider = ({children}) => {
         })
     }
     const updateUserProfile =(name, photo)=>{
-        updateProfile(auth.currentUser,{displayName:name, photoURL:photo})
+       return updateProfile(auth.currentUser,{displayName:name, photoURL:photo})
         .then(()=>{
             console.log('user profile updated');
         })

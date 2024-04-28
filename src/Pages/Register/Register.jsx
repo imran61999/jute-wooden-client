@@ -2,17 +2,37 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUserProfile }= useContext(AuthContext);
 
     const onSubmit = data =>{
-        createUser(data.email, data.password)
+        const email = data.email;
+        const password = data.password;
+        const user = { email }
+
+        createUser(email, password)
         .then(res =>{
             const loggedUser = res.user;
             console.log(loggedUser);
-            updateUserProfile()
+            updateUserProfile(data.name, data.photo)
+
+            fetch('http://localhost:5000/user', {
+                method: 'POST',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then( res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire("Your Registration successful");
+                }
+            })
+
         })
 
     }
