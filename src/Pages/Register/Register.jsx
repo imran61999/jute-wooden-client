@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUserProfile }= useContext(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit = data =>{
         const email = data.email;
@@ -30,6 +31,7 @@ const Register = () => {
             .then(data => {
                 if(data.insertedId){
                     Swal.fire("Your Registration successful");
+                    navigate('/');
                 }
             })
 
