@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddCraftItem = () => {
     const { user } = useContext(AuthContext)
@@ -11,7 +12,20 @@ const AddCraftItem = () => {
     const onSubmit = data =>{
         const postData = { ...data }
 
-        console.log(postData)
+        fetch('http://localhost:5000/craft', {
+            method: 'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(postData)
+        })
+        .then( res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire("Your craft added to database");
+                
+            }
+        })
         
     }
     return (

@@ -1,0 +1,86 @@
+[
+    {
+      "image": " https://i.ibb.co/x19HPwP/Wooden-Home-Decor.jpg",
+      "item_name": "Handcrafted Oak Dining Table",
+      "subcategory_Name": "Wooden Furniture & Sculptures",
+      "short_description": "Beautifully carved oak dining table with intricate designs.",
+      "price": "$500",
+      "rating": 4.8,
+      "customization": "Yes",
+      "processing_time": "2 weeks",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "John Doe"
+    },
+    {
+      "image": "https://i.ibb.co/h7ks6hn/Wooden-Furniture-Sculptures.jpg",
+      "item_name": "Handcrafted Wooden Wall Clock",
+      "subcategory_Name": "Wooden Home Decor",
+      "short_description": "Elegant wooden wall clock with vintage finish.",
+      "price": "$50",
+      "rating": 4.5,
+      "customization": "No",
+      "processing_time": "1 week",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Jane Smith"
+    },
+    {
+      "image": "https://i.ibb.co/PFHsG2z/Wooden-Utensilsand-Kitchenware.jpg",
+      "item_name": "Handcrafted Bamboo Cutting Board Set",
+      "subcategory_Name": "Wooden Utensils and Kitchenware",
+      "short_description": "Set of bamboo cutting boards in various sizes.",
+      "price": "$35",
+      "rating": 4.7,
+      "customization": "No",
+      "processing_time": "3 days",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Michael Johnson"
+    },
+    {
+      "image": "https://i.ibb.co/zXJG801/Jute-Home-Decor.jpg",
+      "item_name": "Handwoven Jute Rug",
+      "subcategory_Name": "Jute Home Decor",
+      "short_description": "Natural jute rug with intricate patterns, perfect for adding warmth to any room.",
+      "price": "$70",
+      "rating": 4.6,
+      "customization": "No",
+      "processing_time": "1 week",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Emily Wilson"
+    },
+    {
+      "image": "https://i.ibb.co/TK6fbZg/Jute-Kitchenware-utensils.jpg",
+      "item_name": "Handcrafted Jute Placemats Set",
+      "subcategory_Name": "Jute Kitchenware & Utensils",
+      "short_description": "Set of jute placemats with delicate embroidery.",
+      "price": "$25",
+      "rating": 4.4,
+      "customization": "Yes",
+      "processing_time": "5 days",
+      "stockStatus": "No",
+      "user_email": "jony@gmail.com",
+      "user_name": "David Brown"
+    },
+    {
+      "image": "https://i.ibb.co/2t8KVy0/Jute-woodenjewellery.jpg",
+      "item_name": "Handmade Jute and Wood Necklace",
+      "subcategory_Name": "Jute and Wooden Jewellery",
+      "short_description": "Unique necklace crafted from jute and wooden beads.",
+      "price": "$20",
+      "rating": 4.9,
+      "customization": "No",
+      "processing_time": "2 days",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Sophia Miller"
+    }
+  ]
+  
+ 
+
+
+
+

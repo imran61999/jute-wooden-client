@@ -9,6 +9,8 @@ import Login from './Pages/Login/Login.jsx'
 import Register from './Pages/Register/Register.jsx'
 import AuthProvider from './Providers/AuthProvider.jsx'
 import AddCraftItem from './Pages/AddCraft/AddCraftItem.jsx'
+import SameCategories from './Pages/Category/SameCategories.jsx'
+import MyArtAndCraft from './Pages/MyArt&Craft/MyArtAndCraft.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       {
         path:'/addCraft',
         element:<AddCraftItem></AddCraftItem>
+      },
+      {
+        path:'/sameCategory',
+        element:<SameCategories></SameCategories>
+      },
+      {
+        path:'/myList',
+        element:<MyArtAndCraft></MyArtAndCraft>
       }
     ]
   }
