@@ -11,6 +11,7 @@ import AuthProvider from './Providers/AuthProvider.jsx'
 import AddCraftItem from './Pages/AddCraft/AddCraftItem.jsx'
 import SameCategories from './Pages/Category/SameCategories.jsx'
 import MyArtAndCraft from './Pages/MyArt&Craft/MyArtAndCraft.jsx'
+import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:'/myList',
         element:<MyArtAndCraft></MyArtAndCraft>
+      },
+      {
+        path:'/allItem',
+        element:<AllArtAndCraft></AllArtAndCraft>
       }
     ]
   }

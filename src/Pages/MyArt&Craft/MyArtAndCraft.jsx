@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import MyArtCard from "./MyArtCard";
 
 const MyArtAndCraft = () => {
     const { user } = useContext(AuthContext);
@@ -13,6 +14,12 @@ const MyArtAndCraft = () => {
     return (
         <div>
             <h2>My Craft: {myLists?.length}</h2>
+            <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center mb-10">
+                {
+                    myLists?.map(list => <MyArtCard key={list._id} myCraft={list}></MyArtCard>)
+                }
+            </div>
+
         </div>
     );
 };
