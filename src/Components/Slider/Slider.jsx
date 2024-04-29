@@ -12,7 +12,7 @@ import slide3 from '../../assets/slider3.jpg'
 
 const Slider = () => {
     return (
-        <div className='px-3'>
+        <div className='px-3 mb-5'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
             <img src={slide1} alt="" />
