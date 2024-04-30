@@ -13,6 +13,7 @@ import SameCategories from './Pages/Category/SameCategories.jsx'
 import MyArtAndCraft from './Pages/MyArt&Craft/MyArtAndCraft.jsx'
 import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx'
 import Update from './Pages/Update/Update.jsx'
+import Details from './Pages/Details/Details.jsx'
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         element:<Update></Update>,
         loader:({params})=> fetch(`http://localhost:5000/craft/update/${params.id}`)
       },
+      {
+        path:'/details/:id',
+        element:<Details></Details>,
+        loader:({params})=> fetch(`http://localhost:5000/craft/idx/${params.id}`)
+      }
     ]
   }
 ])

@@ -9,8 +9,7 @@ const CategoryCard = ({category}) => {
                 <img src={image} alt="Shoes" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{subcategory_Name}</h2>
-                <p>{short_description}</p>
+                <h2 className="card-title"> <strong>Category: </strong> {subcategory_Name}</h2>
             </div>
         </div>
         </Link>
