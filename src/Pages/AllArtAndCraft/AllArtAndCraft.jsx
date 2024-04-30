@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AllArtAndCraftCard from "./AllArtAndCraftCard";
+import { Link } from "react-router-dom";
 
 const AllArtAndCraft = () => {
     const [allItem, setAllItem] = useState([]);
@@ -10,14 +10,36 @@ const AllArtAndCraft = () => {
         .then(data => setAllItem(data))
     },[])
     return (
-        <div>
-            <h2>All Craft: {allItem?.length}</h2>
-            <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center">
-                {
-                    allItem.map(item => <AllArtAndCraftCard key={item._id} craft={item}></AllArtAndCraftCard>)
-                }
-            </div>
-        </div>
+        <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Item Name</th>
+              <th>Sub Category</th>
+              <th>Price</th>
+              <th>Customization</th>
+              <th>Stock Status</th>
+              <th>Details</th>
+      
+            </tr>
+          </thead>
+          <tbody>
+            {
+              allItem?.map((caf,idx) => <tr key={caf._id}>
+                <th>{idx +1}</th>
+                <td>{caf.item_name}</td>
+                <td>{caf.subcategory_Name}</td>
+                <td>{caf.price}</td>
+                <td>{caf.customization}</td>
+                <td>{caf.stockStatus}</td>
+                <td> <Link to={`/details/${caf._id}`}>View Details</Link></td>
+              </tr> )
+            }            
+          </tbody>
+        </table>
+      </div>
     );
 };
 

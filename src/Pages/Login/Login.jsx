@@ -62,6 +62,24 @@ const Login = () => {
       .then(result =>   {
         const user = result?.user?.email;
         console.log(user)
+        navigate('/')
+        Swal.fire({
+            title: "User LoggedIn Successfully by Google",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
       })
       .catch(error =>{
         console.log(error.message)
@@ -73,6 +91,24 @@ const Login = () => {
       .then( result => {
         const loggedUser = result.user;
         console.log(loggedUser)
+        navigate('/')
+        Swal.fire({
+            title: "User LoggedIn Successfully by github",
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
       })
       .catch( error =>{
         console.log(error)

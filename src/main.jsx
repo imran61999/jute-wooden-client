@@ -14,6 +14,7 @@ import MyArtAndCraft from './Pages/MyArt&Craft/MyArtAndCraft.jsx'
 import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx'
 import Update from './Pages/Update/Update.jsx'
 import Details from './Pages/Details/Details.jsx'
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/addCraft',
-        element:<AddCraftItem></AddCraftItem>
+        element:<PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
       },
       {
         path:'/sameCategory',
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/myList',
-        element:<MyArtAndCraft></MyArtAndCraft>
+        element:<PrivateRoute><MyArtAndCraft></MyArtAndCraft></PrivateRoute>
       },
       {
         path:'/allItem',
@@ -56,8 +57,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/details/:id',
-        element:<Details></Details>,
+        element:<PrivateRoute><Details></Details></PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/craft/idx/${params.id}`)
+      },
+      {
+        path:'/sameCategory/:subcategory_Name',
+        element:<SameCategories></SameCategories>,
+        loader:({params})=> fetch(`http://localhost:5000/craft/sub/cat/${params.subcategory_Name}`)
       }
     ]
   }

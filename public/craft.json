@@ -76,7 +76,85 @@
       "stockStatus": "Yes",
       "user_email": "jony@gmail.com",
       "user_name": "Sophia Miller"
-    }
+    },
+    {
+      "image": "https://i.ibb.co/x19HPwP/Wooden-Home-Decor.jpg",
+      "item_name": "Vintage Wooden Wall Art",
+      "subcategory_Name": "Wooden Furniture & Sculptures",
+      "short_description": "Beautifully carved wooden wall art with a vintage touch.",
+      "price": "$120",
+      "rating": 4.6,
+      "customization": "Yes",
+      "processing_time": "3 weeks",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "John Doe"
+  },
+  {
+      "image": "https://i.ibb.co/h7ks6hn/Wooden-Furniture-Sculptures.jpg",
+      "item_name": "Handcrafted Wooden Bookends",
+      "subcategory_Name": "Wooden Home Decor",
+      "short_description": "Stylish wooden bookends to add charm to your bookshelf.",
+      "price": "$35",
+      "rating": 4.4,
+      "customization": "No",
+      "processing_time": "1 week",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Jane Smith"
+  },
+  {
+      "image": "https://i.ibb.co/PFHsG2z/Wooden-Utensilsand-Kitchenware.jpg",
+      "item_name": "Eco-Friendly Bamboo Kitchen Utensil Set",
+      "subcategory_Name": "Wooden Utensils and Kitchenware",
+      "short_description": "Set of eco-friendly bamboo kitchen utensils for sustainable cooking.",
+      "price": "$50",
+      "rating": 4.7,
+      "customization": "No",
+      "processing_time": "2 days",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Michael Johnson"
+  },
+  {
+      "image": "https://i.ibb.co/zXJG801/Jute-Home-Decor.jpg",
+      "item_name": "Natural Jute Table Runner",
+      "subcategory_Name": "Jute Home Decor",
+      "short_description": "Handwoven natural jute table runner for a rustic touch to your dining table.",
+      "price": "$25",
+      "rating": 4.5,
+      "customization": "No",
+      "processing_time": "1 week",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Emily Wilson"
+  },
+  {
+      "image": "https://i.ibb.co/TK6fbZg/Jute-Kitchenware-utensils.jpg",
+      "item_name": "Handmade Jute Coasters Set",
+      "subcategory_Name": "Jute Kitchenware & Utensils",
+      "short_description": "Set of handmade jute coasters to protect your tabletops in style.",
+      "price": "$15",
+      "rating": 4.3,
+      "customization": "Yes",
+      "processing_time": "3 days",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "David Brown"
+  },
+  {
+      "image": "https://i.ibb.co/2t8KVy0/Jute-woodenjewellery.jpg",
+      "item_name": "Bohemian Jute and Wooden Bracelet",
+      "subcategory_Name": "Jute and Wooden Jewellery",
+      "short_description": "Bohemian-style bracelet made from jute and wooden beads.",
+      "price": "$18",
+      "rating": 4.8,
+      "customization": "Yes",
+      "processing_time": "2 days",
+      "stockStatus": "Yes",
+      "user_email": "jony@gmail.com",
+      "user_name": "Sophia Miller"
+  }
   ]
   
  

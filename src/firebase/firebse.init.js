@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAI0mv6BvUXEMO9qiIDTqeUCoJOzMY1ZjU",
-  authDomain: "jute-wood-craft.firebaseapp.com",
-  projectId: "jute-wood-craft",
-  storageBucket: "jute-wood-craft.appspot.com",
-  messagingSenderId: "541700227996",
-  appId: "1:541700227996:web:db3184aebbcf5487fefe59"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

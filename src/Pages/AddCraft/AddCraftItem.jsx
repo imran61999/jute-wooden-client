@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
@@ -7,10 +7,12 @@ import Swal from 'sweetalert2';
 const AddCraftItem = () => {
     const { user } = useContext(AuthContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [selectedCategory, setSelectedCategory] = useState("");
+
     
 
     const onSubmit = data =>{
-        const postData = { ...data }
+        const postData = { ...data,  subcategory_Name: selectedCategory }
 
         fetch('http://localhost:5000/craft', {
             method: 'POST',
@@ -28,6 +30,9 @@ const AddCraftItem = () => {
         })
         
     }
+    const handleCategoryChange = (e) => {
+        setSelectedCategory(e.target.value);
+    };
     return (
         <div className="bg-[#F4F3F0] p-24">
             <h2 className='text-3xl text-center font-extrabold'>Add a Craft Item</h2>
@@ -53,14 +58,21 @@ const AddCraftItem = () => {
                 </div>
                 {/* subcategory_Name and short_description row */}
                 <div className='md:flex gap-3 mb-8'>
-                    <div className='form-control md:w-1/2'>
-                        <label className="label">
-                            <span className='label-text'>Subcategory_Name</span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" {...register('subcategory_Name')} placeholder='Subcategory_name' className='input input-bordered w-full' />
-                        </label>
-                    </div>
+                    
+                    <label className="form-control md:w-1/2 max-w-xs">
+                        <div className="label">
+                            <span className="label-text">Sub Category</span>
+                        </div>
+                        <select className="select select-bordered w-full" {...register('subcategory_Name')} value={selectedCategory} onChange={handleCategoryChange}>
+                            <option disabled selected>Pick one</option>
+                                <option>Wooden Furniture & Sculptures</option>
+                                <option>Wooden Home Decor</option>
+                                <option>Wooden Utensils and Kitchenware</option>
+                                <option>Jute Home Decor</option>
+                                <option>Jute Kitchenware & Utensils</option>
+                                <option>Jute and Wooden Jewellery</option>
+                        </select>
+                    </label>
                     <div className='form-control md:w-1/2'>
                         <label className="label">
                             <span className='label-text'>Short Description</span>

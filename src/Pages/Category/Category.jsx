@@ -13,7 +13,7 @@ const Category = () => {
         })
     },[])
     return (
-        <div>
+        <div className="mb-10">
             <h2 className="text-3xl  font-bold text-center">Art & Craft Categories: {mainCategories.length}</h2>
             <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center">
                 {

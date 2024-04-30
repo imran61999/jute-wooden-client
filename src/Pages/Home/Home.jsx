@@ -1,11 +1,12 @@
 import Slider from "../../Components/Slider/Slider";
 import Category from "../Category/Category";
+import CraftItemsSection from "../CraftItemsSection/CraftItemsSection";
 
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <h2>Craft Items Section</h2>
+            <CraftItemsSection></CraftItemsSection>
             <Category></Category>
         </div>
     );

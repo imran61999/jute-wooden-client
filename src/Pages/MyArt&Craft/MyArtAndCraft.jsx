@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const MyArtAndCraft = () => {
     const { user } = useContext(AuthContext);
     const [myLists, setMyLists] = useState([]);
+    const [filterValue, setFilterValue] = useState("All");
 
     useEffect(()=>{
         fetch(`http://localhost:5000/craft/${user?.email}`)
@@ -46,12 +47,27 @@ const MyArtAndCraft = () => {
           }
         });
       }
+
+      const filteredList = myLists.filter((item) =>
+        filterValue === "All" ? true : item.customization === filterValue
+    );
+
     return (
         <div>
-            <h2>My Craft: {myLists?.length}</h2>
+            <h2 className="text-3xl text-center">My Craft</h2>
+            <div className="flex justify-center my-4">
+                <select
+                    className="p-2 border rounded"
+                    onChange={(e) => setFilterValue(e.target.value)}
+                >
+                    <option value="All">All</option>
+                    <option value="Yes">Customized</option>
+                    <option value="No">Not Customized</option>
+                </select>
+            </div>
             <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center mb-10">
                 {
-                    myLists?.map(list => <MyArtCard key={list._id} 
+                    filteredList?.map(list => <MyArtCard key={list._id} 
                         myCraft={list}
                         handleDelete={handleDelete}
                         ></MyArtCard>)
