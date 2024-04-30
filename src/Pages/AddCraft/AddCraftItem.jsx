@@ -14,7 +14,7 @@ const AddCraftItem = () => {
     const onSubmit = data =>{
         const postData = { ...data,  subcategory_Name: selectedCategory }
 
-        fetch('http://localhost:5000/craft', {
+        fetch('https://jute-wooden-server.vercel.app/craft', {
             method: 'POST',
             headers:{
                 'content-type': 'application/json'

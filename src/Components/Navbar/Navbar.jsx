@@ -1,19 +1,35 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
   const {user, loading, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState('light')
 
   const links = <>
     <li> <NavLink to="/">Home</NavLink> </li>
     <li> <NavLink to="/allItem">All Art&Craft Items</NavLink> </li>
     <li> <NavLink to="/addCraft">Add Craft Item</NavLink> </li>
     <li> <NavLink to="/myList">My Art&Craft List</NavLink> </li>
+    
   </>
+
+  useEffect(()=>{
+    localStorage.setItem('theme', theme)
+    const localTheme = localStorage.getItem('theme')
+    document.querySelector('html').setAttribute('data-theme', localTheme)
+  },[theme])
 
   const handleLogOut=()=>{
     logOut()
+  }
+  const handleToggle = e =>{
+    if(e.target.checked){
+      setTheme('synthwave')
+    }
+    else{
+      setTheme('light')
+    }
   }
     return (
         <div className="navbar bg-base-100">
@@ -26,7 +42,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Art & Craft Shop</a>
+    <a className="btn btn-ghost text-xl">Craftify Haven</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -60,6 +76,7 @@ const Navbar = () => {
              
             }
           </div>
+          <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller"/>
 </div>
     );
 };

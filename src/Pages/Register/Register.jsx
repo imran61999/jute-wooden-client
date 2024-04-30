@@ -20,7 +20,7 @@ const Register = () => {
             console.log(loggedUser);
             updateUserProfile(data.name, data.photo)
 
-            fetch('http://localhost:5000/user', {
+            fetch('https://jute-wooden-server.vercel.app/user', {
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'
