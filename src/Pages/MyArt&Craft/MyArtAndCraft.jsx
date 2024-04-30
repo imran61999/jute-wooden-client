@@ -7,11 +7,15 @@ const MyArtAndCraft = () => {
     const { user } = useContext(AuthContext);
     const [myLists, setMyLists] = useState([]);
     const [filterValue, setFilterValue] = useState("All");
+    const [loading, setLoading] =useState(true);
 
     useEffect(()=>{
         fetch(`https://jute-wooden-server.vercel.app/craft/${user?.email}`)
         .then(res => res.json())
-        .then(data=> setMyLists(data))
+        .then(data=> {
+          setMyLists(data)
+          setLoading(false)
+        })
     },[])
 
     const handleDelete = _id=>{
@@ -67,10 +71,14 @@ const MyArtAndCraft = () => {
             </div>
             <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center mb-10">
                 {
+                  loading? (<div>
+                    <span className="loading loading-ball loading-lg"></span>
+                  </div>):(
                     filteredList?.map(list => <MyArtCard key={list._id} 
                         myCraft={list}
                         handleDelete={handleDelete}
                         ></MyArtCard>)
+                )
                 }
             </div>
 

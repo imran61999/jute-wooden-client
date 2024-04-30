@@ -3,15 +3,24 @@ import { Link } from "react-router-dom";
 
 const AllArtAndCraft = () => {
     const [allItem, setAllItem] = useState([]);
+    const [loading, setLoading] =useState(true);
 
     useEffect(()=>{
         fetch('https://jute-wooden-server.vercel.app/craft')
         .then(res => res.json())
-        .then(data => setAllItem(data))
+        .then(data => {
+          setAllItem(data)
+          setLoading(false)
+        })
     },[])
     return (
         <div className="overflow-x-auto">
-        <table className="table">
+        {
+          loading? (
+            <div>
+              <span className="loading loading-ball loading-lg"></span>
+            </div>
+          ):(<table className="table">
           {/* head */}
           <thead>
             <tr>
@@ -38,7 +47,8 @@ const AllArtAndCraft = () => {
               </tr> )
             }            
           </tbody>
-        </table>
+        </table>)
+        }
       </div>
     );
 };
