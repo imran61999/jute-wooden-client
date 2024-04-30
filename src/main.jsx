@@ -12,6 +12,7 @@ import AddCraftItem from './Pages/AddCraft/AddCraftItem.jsx'
 import SameCategories from './Pages/Category/SameCategories.jsx'
 import MyArtAndCraft from './Pages/MyArt&Craft/MyArtAndCraft.jsx'
 import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx'
+import Update from './Pages/Update/Update.jsx'
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,12 @@ const router = createBrowserRouter([
       {
         path:'/allItem',
         element:<AllArtAndCraft></AllArtAndCraft>
-      }
+      },
+      {
+        path:'/updateCraft/:id',
+        element:<Update></Update>,
+        loader:({params})=> fetch(`http://localhost:5000/craft/update/${params.id}`)
+      },
     ]
   }
 ])

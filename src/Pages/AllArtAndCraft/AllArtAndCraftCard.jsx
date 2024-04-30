@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-const MyArtCard = ({myCraft}) => {
-    const { _id, image, item_name, price, rating, customization,stockStatus } = myCraft;
+const AllArtAndCraftCard = ({craft}) => {
+    const { _id,image, item_name, price, rating, customization,stockStatus } = craft;
     return (
         <div className="card bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
@@ -17,12 +17,11 @@ const MyArtCard = ({myCraft}) => {
           <p><strong>Customization:</strong> {customization}</p>
           <p><strong>Stock Status:</strong>{stockStatus}</p>
           <div className="card-actions">
-            <button className="btn btn-secondary btn-sm">Delete</button>
-            <Link to={`/updateCraft/${_id}`}><button className="btn btn-secondary btn-sm">Update</button></Link>
+            <Link to={`/details/${_id}`}><button className="btn btn-secondary btn-sm">View details</button></Link>
           </div>
         </div>
       </div>
     );
 };
 
-export default MyArtCard;
+export default AllArtAndCraftCard;
